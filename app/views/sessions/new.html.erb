@@ -1,15 +1,16 @@
-<%= form_tag sessions_path do %>
-  <fieldset>
-    <legend>Sign In</legend>
-    <div class="form-group">
-      <%= label_tag :email %>
-      <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter Email" %>
-    </div>
-    <div class="form-group">
-      <%= label_tag :password %>
-      <%= password_field_tag :password, nil, class: "form-control", placeholder: "Enter Password" %>
-    </div>
-    <button type="submit" class="btn btn-default">Login</button>
-    <%= link_to "Sign Up", new_user_path %>
-  </fieldset>
-<% end %>
+<div class="container">
+  <%= form_tag sessions_path, class: "form-signin" do %>
+    <fieldset>
+      <legend>Sign In</legend>
+      <div class="form-group">
+        <%= text_field_tag :email, nil, class: "input-block-level", placeholder: "Enter Email" %>
+      </div>
+      <div class="form-group">
+        <%= password_field_tag :password, nil, class: "input-block-level", placeholder: "Enter Password" %>
+      </div>
+      <button type="submit" class="btn btn-default btn-block">Login</button>
+      <br/>
+      <%= link_to "Sign up", new_user_path %> for a new account
+    </fieldset>
+  <% end %>
+</div>

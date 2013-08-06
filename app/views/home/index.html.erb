@@ -1,2 +1,47 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
+  <div class="profile-container">
+    <div class="media">
+      <%= image_tag avatar_url(current_user), class: "pull-left" %>
+      <div class="media-body">
+        <div class="media">
+          <h5><%= current_user.email %></h5>
+          <%= link_to "logout", logout_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Próximas Cobranças</h3>
+  </div>
+  
+  <table class="table table-hover">
+    <th>Email</th>
+    <th>Description</th>
+    <th>Deadline</th>
+    <th></th>
+
+    <tr>
+      <td>piagodinho@gmail.com</td>
+      <td>Mensalidade do Colégio</td>
+      <td>01/04/2012</td>
+      <td><%= link_to "notify ", "#" %></td>
+    </tr>
+    <tr>
+      <td>piagodinho@gmail.com</td>
+      <td>Mensalidade do Colégio</td>
+      <td>01/04/2012</td>
+      <td><%= link_to "notify", "#" %></td>
+    </tr>
+    <tr>
+      <td>piagodinho@gmail.com</td>
+      <td>Mensalidade do Colégio</td>
+      <td>01/04/2012</td>
+      <td><%= link_to "notify", "#" %></td>
+    </tr>
+  </table>
+
+  <div class="btn-group">
+    <button class="btn">New</button>
+  </div>
+</div>

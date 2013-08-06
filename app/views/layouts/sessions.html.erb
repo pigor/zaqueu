@@ -38,17 +38,21 @@
     <%#= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
+
     <div class="container-fluid">
-      <div class="container">
-        <p class="title-font title-margin">Zaqueu</p>
-        <div class="row-fluid">
+      <div class="row-fluid">
+        <div class="container">
+          <p class="title-font title-margin">Zaqueu</p>
+        </div>
         <div class="span9">
+          <br/>
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
       </div><!--/row-->
-      </div>
+
       <footer>
+        
       </footer>
 
     </div> <!-- /container -->
