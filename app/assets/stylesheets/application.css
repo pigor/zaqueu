@@ -12,3 +12,12 @@
  *= require_tree .
  *= require bootstrap_and_overrides
  */
+
+.title-font {
+  font-family: 'Londrina Shadow', cursive;
+  font-size: 48px;
+}
+
+.title-margin {
+  margin: 30px 0 35px 0;
+}
