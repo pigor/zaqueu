@@ -11,9 +11,7 @@
     </div>
   </div>
 
-  <div class="page-header">
-    <h3>Próximas Cobranças</h3>
-  </div>
+  <h3>Próximas Cobranças</h3>
   
   <table class="table table-hover">
     <th>Email</th>
@@ -21,24 +19,7 @@
     <th>Deadline</th>
     <th></th>
 
-    <tr>
-      <td>piagodinho@gmail.com</td>
-      <td>Mensalidade do Colégio</td>
-      <td>01/04/2012</td>
-      <td><%= link_to "notify ", "#" %></td>
-    </tr>
-    <tr>
-      <td>piagodinho@gmail.com</td>
-      <td>Mensalidade do Colégio</td>
-      <td>01/04/2012</td>
-      <td><%= link_to "notify", "#" %></td>
-    </tr>
-    <tr>
-      <td>piagodinho@gmail.com</td>
-      <td>Mensalidade do Colégio</td>
-      <td>01/04/2012</td>
-      <td><%= link_to "notify", "#" %></td>
-    </tr>
+    <%= render partial: "collection", collection: current_user.collections %>
   </table>
 
   <div class="btn-group">
