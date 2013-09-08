@@ -2,5 +2,6 @@
   <td><%= collection.user.email %></td>
   <td><%= collection.description %></td>
   <td><%= collection.deadline %></td>
-  <td><%= link_to "notify ", "#" %></td>
+  <td><%= link_to "cobrar agora!", "#" %></td>
+  <td><%= link_to "apagar", user_collection_path(current_user, collection), method: :delete %></td>
 </tr>
