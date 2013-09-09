@@ -14,6 +14,14 @@ class CollectionsController < ApplicationController
     end
   end
 
+  def notify
+    collection = Collection.find(params[:collection_id])
+
+    Notification.notify(collection).deliver
+
+    redirect_to root_url, notice: "Cobrança enviada com sucesso!"
+  end
+
   def destroy
     @collection = Collection.find(params[:id])
     @collection.delete

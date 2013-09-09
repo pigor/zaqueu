@@ -5,7 +5,9 @@ Zaqueu::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"
   
   resources :users do
-    resources :collections
+    resources :collections do
+      get :notify
+    end
   end
 
   resources :sessions
