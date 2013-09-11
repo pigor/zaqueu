@@ -5,6 +5,6 @@ Esse projeto tem o objetivo de fornecer um sistema simples de cobrança e lembre
 Mais informações visite: http://idopter.com/users/paulo-igor/ideas/186-cobrador-online
 
 == Próximas Funcionalidades
-- Criar validação para data
+
 - Disparar cobranças automáticas
 - Agendar cobranças periódicas
