@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_url, :notice => "Signed up!"
     else
+      flash[:error] = "Sign Up Failed."
       render :new
     end
   end
@@ -16,6 +17,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:name, :username, :email, :password)
   end
 end

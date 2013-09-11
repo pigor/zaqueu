@@ -4,6 +4,7 @@
       <%= image_tag avatar_url(current_user), class: "pull-left" %>
       <div class="media-body">
         <div class="media">
+          <h4><%= current_user.name %></h4>
           <h5><%= current_user.email %></h5>
           <%= link_to "logout", logout_path %>
         </div>

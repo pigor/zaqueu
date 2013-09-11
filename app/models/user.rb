@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   has_many :collections
 
+  validates :name, :email, :password, presence: true
+
   def collections_ordered
     collections.order(:deadline)
   end
