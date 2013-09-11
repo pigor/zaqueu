@@ -4,6 +4,6 @@ class Notification < ActionMailer::Base
   def notify(collection)
     @collection = collection
 
-    mail to: @collection.user.email, subject: "Lembrete de Cobrança"
+    mail to: @collection.email, subject: "Lembrete de Cobrança"
   end
 end
