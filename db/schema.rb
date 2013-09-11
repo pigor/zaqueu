@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130812165840) do
+ActiveRecord::Schema.define(version: 20130911010557) do
 
   create_table "collections", force: true do |t|
     t.integer  "user_id"
     t.text     "description"
     t.datetime "deadline"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email"
+  end
+
+  create_table "user_collections", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "collection_id"
+    t.boolean  "collector"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
