@@ -19,6 +19,8 @@ class CollectionsController < ApplicationController
 
     Notification.notify(collection).deliver
 
+    collection.update_attributes(send_count: (collection.send_count + 1))
+
     redirect_to root_url, notice: "Cobrança enviada com sucesso!"
   end
 

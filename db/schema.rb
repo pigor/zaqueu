@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130911010557) do
+ActiveRecord::Schema.define(version: 20130911015304) do
 
   create_table "collections", force: true do |t|
     t.integer  "user_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20130911010557) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
+    t.integer  "send_count",  default: 0
   end
 
   create_table "user_collections", force: true do |t|

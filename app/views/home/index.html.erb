@@ -16,14 +16,16 @@
     <%= link_to 'Nova Cobrança', new_user_collection_path(current_user), class: "btn" %>
   </div>
 
+  <hr/>
   <h3>Próximas Cobranças</h3>
   <table class="table table-hover">
     <th>Email de Cobrança</th>
     <th>Descrição</th>
     <th>Dia da Cobrança</th>
+    <th>Número de Envios</th>
     <th></th>
     <th></th>
 
-    <%= render partial: "collection", collection: current_user.collections %>
+    <%= render partial: "collection", collection: current_user.collections_ordered %>
   </table>
 </div>
