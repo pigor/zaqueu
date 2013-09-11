@@ -1,10 +1,15 @@
 Olá,
 
-Estou aqui para lembrá-lo de uma cobrança. Veja as informações a seguir:
+Eu sou o Zaqueu e vim cobrar você em nome do <%= @collection.user.name %>.
+
+As informações dessa cobrança são:
 
 Descrição da Cobrança: <%= @collection.description %>
-Data de Cobrança: <%= @collection.deadline %>
+Data de Cobrança: <%= @collection.deadline.strftime('%d/%m/%Y') %>
 
-Atenciosamente,
+O <%= @collection.user.name %> aguarda o seu retorno! ;)
 
-Seu amigo Zaqueu!
+Obrigado,
+
+Zaqueu.
+http://zaqueu.heroku.com
