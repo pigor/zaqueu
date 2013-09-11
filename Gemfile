@@ -35,7 +35,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 
 gem 'pry'
 
-gem 'thin'
+gem 'passenger'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
