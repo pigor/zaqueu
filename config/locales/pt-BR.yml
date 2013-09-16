@@ -1,0 +1,15 @@
+"pt-BR":
+  activerecord:
+    models:
+      user: "Usuário"
+      collection: "Cobrança"
+    attributes:
+      user:
+        name: "Nome"
+        username: "Username"
+        email: "Email"
+        password: "Password"
+      collection:
+        email: "Email"
+        description: "Descrição"
+        deadline: "Data da Cobrança"

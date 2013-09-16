@@ -1,16 +1,16 @@
 <div class="container">
   <%= form_tag sessions_path, class: "form-signin" do %>
     <fieldset>
-      <legend>Sign In</legend>
+      <legend>Entrar</legend>
       <div class="form-group">
-        <%= text_field_tag :email, nil, class: "input-block-level", placeholder: "Enter Email" %>
+        <%= text_field_tag :email, nil, class: "input-block-level", placeholder: "Digite seu Email" %>
       </div>
       <div class="form-group">
-        <%= password_field_tag :password, nil, class: "input-block-level", placeholder: "Enter Password" %>
+        <%= password_field_tag :password, nil, class: "input-block-level", placeholder: "Digite sua Senha" %>
       </div>
       <button type="submit" class="btn btn-default btn-block">Login</button>
       <br/>
-      <%= link_to "Sign up", new_user_path %> for a new account
+      <%= link_to "Crie sua conta", new_user_path %> 
     </fieldset>
   <% end %>
 </div>
