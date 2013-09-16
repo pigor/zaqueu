@@ -5,7 +5,7 @@
     <div class="control-group">
       <%= f.label :email, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :email, :class => 'text_field' %>
+        <%= f.email_field :email, :class => 'text_field' %>
       </div>
     </div>
     <div class="control-group">
@@ -17,7 +17,12 @@
     <div class="control-group">
       <%= f.label :deadline, :class => 'control-label' %>
       <div class="controls">
-        <%= f.date_field :deadline, :class => 'datafield' %>
+        <div id="deadline-field" class="input-append date">
+          <%= f.text_field :deadline, :"data-format" => "dd/MM/yyyy hh:mm:ss" %>
+          <span class="add-on">
+            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+          </span>
+        </div>
       </div>
     </div>
 
