@@ -9,3 +9,7 @@ development: &default
 test:
   <<: *default
   database: zaqueu_test
+
+production:
+  <<: *default
+  database: zaqueu_production
