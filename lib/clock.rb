@@ -4,4 +4,4 @@ require 'clockwork'
 
 include Clockwork
 
-every(1.minutes, 'Sending collections') { Collection.by_deadline(DateTime.now).each{|collection| collection.notify} }
+every(1.minutes, 'Sending collections') { Collection.by_deadline(Time.zone.now).each{|collection| collection.notify} }
