@@ -1,7 +1,11 @@
 <tr>
   <td><%= collection.email %></td>
   <td><%= collection.description %></td>
-  <td><%= collection.deadline.strftime('%d/%m/%Y - %H:%M') %></td>
+  <td>
+    <div class="<%= deadline_color(collection) %>">
+      <%= collection.deadline.strftime('%d/%m/%Y - %H:%M') %>
+    </div>
+  </td>
   <td><center><%= collection.send_count %></center></td>
   <td><%= link_to "cobrar agora", user_collection_notify_path(current_user, collection) %></td>
   <td><%= link_to "encerrar", user_collection_path(current_user, collection), method: :delete %></td>
