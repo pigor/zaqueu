@@ -7,10 +7,25 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_url, :notice => "Signed up!"
+      redirect_to root_url, :notice => "Cadastro realizado com sucesso!"
     else
-      flash[:error] = "Sign Up Failed."
+      flash[:error] = "Ocorreu um erro ao realizar o seu cadastro!"
       render :new
+    end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update_attributes(user_params)
+      redirect_to root_url, notice: "Senha alterada com sucesso!"
+    else
+      flash[:error] = "Ocorreu um erro ao alterar sua senha!"
+      render :edit
     end
   end
 
