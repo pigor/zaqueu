@@ -5,7 +5,12 @@ As informações dessa cobrança são:
 Descrição: <%= @collection.description %>
 
 Data de Cobrança: <%= @collection.deadline.strftime('%d/%m/%Y') %>
-<%= @collection.user.name %> aguarda o seu retorno! ;)
+<% if @collection.send_count > 1 %>
+  Eu cobrei você <%= @collection.send_count %> vezes antes dessa!
+  <%= @collection.user.name %> continua aguardando o seu retorno! ;)
+<% else %>
+  <%= @collection.user.name %> aguarda o seu retorno! ;)
+<% end %>
 
 Obrigado,
 

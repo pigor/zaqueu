@@ -1,15 +1,20 @@
 <p>Olá,</p>
 
-<p>Eu sou o Zaqueu e vim cobrar você em nome do(a) <%= @collection.user.name %> (<%=@collection.user.email%>).</p>
+<p>Eu sou o Zaqueu e vim cobrar você em nome de <%= @collection.user.name %> (<%=@collection.user.email%>).</p>
 <p>As informações dessa cobrança são:</p>
-<p>Descrição: <%= @collection.description %></p>
 
-<p>Data de Cobrança: <%= @collection.deadline.strftime('%d/%m/%Y') %></p>
-<p><%= @collection.user.name %> aguarda o seu retorno! ;)</p>
+<p><strong>Descrição:</strong> <%= @collection.description %></p>
+<p><strong>Data de Cobrança:</strong> <%= @collection.deadline.strftime('%d/%m/%Y') %></p>
+<% if @collection.send_count > 1 %>
+  <p>Eu cobrei você <strong><%= @collection.send_count %> vezes</strong> antes dessa!</p>
+  <p><%= @collection.user.name %> continua aguardando o seu retorno! ;)</p>
+<% else %>
+  <p><%= @collection.user.name %> aguarda o seu retorno! ;)</p>
+<% end %>
 
 <br/>
 <p>Obrigado,</p>
 
 <br/>
 <p>Zaqueu.</p>
-<p>http://zaqueu.com.br</p>
+<p><a href="http://zaqueu.com.br">http://zaqueu.com.br</a></p>
