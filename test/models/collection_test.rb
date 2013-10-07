@@ -12,6 +12,5 @@ class CollectionTest < ActiveSupport::TestCase
   test '.by_deadline retorna itens vencendo até 10 minutos antes da deadline' do
     assert_empty Collection.by_deadline(1.day.from_now)
     assert_includes Collection.by_deadline(5.days.from_now), @collection
-    assert_includes Collection.by_deadline(5.days.from_now), @collection
   end
 end
