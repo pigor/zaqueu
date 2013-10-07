@@ -10,7 +10,7 @@ Mais informações visite: http://idopter.com/users/paulo-igor/ideas/186-cobrado
 * `gem install foreman`
 * `foreman start`
 
-== Visualizar os Emails em Desenvolvimento
+== Visualizando os Emails em Desenvolvimento
 
 * `gem install mailcatcher`
 * `mailcatcher`
