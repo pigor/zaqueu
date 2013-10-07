@@ -2,7 +2,9 @@
 
 Esse projeto tem o objetivo de fornecer um sistema simples de cobrança e lembretes. Se você tem problemas em lembrar de dívidas ou precisa de ajuda na hora de cobrar alguém esse serviço se propõe a facilitar a sua vida.
 
-Mais informações visite: http://idopter.com/users/paulo-igor/ideas/186-cobrador-online
+Mais informações sobre o projeto visite: http://idopter.com/users/paulo-igor/ideas/186-cobrador-online
+
+Para acessar o serviço: http://zaqueu.com.br
 
 == Rodando em Desenvolvimento
 
