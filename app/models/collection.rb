@@ -3,7 +3,9 @@ class Collection < ActiveRecord::Base
 
   validates :description, :deadline, :email, presence: true
 
-  scope :by_deadline, ->(datetime) { where("deadline > ? and deadline <= ?", (datetime - 10.minutes).strftime('%Y-%m-%d %H:%M'), datetime.strftime('%Y-%m-%d %H:%M')) }
+  scope :by_deadline, ->(datetime) {
+    where('deadline > ? and deadline <= ?', (datetime - 10.minutes), datetime)
+  }
 
   def notify
     Notification.notify(self).deliver
