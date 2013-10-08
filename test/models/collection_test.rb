@@ -9,8 +9,9 @@ class CollectionTest < ActiveSupport::TestCase
                                   email: 'foo@bar.com', user: @user)
   end
 
-  test '.by_deadline retorna itens vencendo até 10 minutos antes da deadline' do
+  test '.by_deadline retorna itens vencendo até 10 minutos depois do deadline' do
     assert_empty Collection.by_deadline(1.day.from_now)
     assert_includes Collection.by_deadline(5.days.from_now), @collection
+    assert_includes Collection.by_deadline(5.days.from_now + 9.minutes), @collection
   end
 end
