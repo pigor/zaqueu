@@ -9,4 +9,9 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Zaqueu::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
+if Rails.env.development? || Rails.env.test?
+  secret_key_base = '75898d8956d81cba812ae485aaca74fc3f09019649579ebe7178cebc8795ff5587e58724e76c5b1b3dddd8ddd547f11bc2e4292cbb002530e84606e0a37ffefa'
+  Zaqueu::Application.config.secret_key_base = secret_key_base
+else
+  Zaqueu::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
+end
