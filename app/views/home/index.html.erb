@@ -21,14 +21,16 @@
 
   <hr/>
   <h3>Próximas Cobranças (<%= current_user.collections.count %>)</h3>
-  <table class="table table-hover">
-    <th>Email de Cobrança</th>
-    <th>Descrição</th>
-    <th>Data da Cobrança</th>
-    <th><center>Nº de Envios</center></th>
-    <th></th>
-    <th></th>
+  <% if current_user.collections.any? %>
+    <table class="table table-hover">
+      <th>Email de Cobrança</th>
+      <th>Descrição</th>
+      <th>Data da Cobrança</th>
+      <th><center>Nº de Envios</center></th>
+      <th></th>
+      <th></th>
 
-    <%= render partial: "collection", collection: current_user.collections_ordered %>
-  </table>
+      <%= render partial: "collection", collection: current_user.collections_ordered %>
+    </table>
+  <% end %>
 </div>
