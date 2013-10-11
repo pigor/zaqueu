@@ -1,0 +1,12 @@
+<div class="container">
+  <%= form_tag password_resets_path, method: :post, class: "form-signin" do %>
+    <fieldset>
+      <h5>Informe o email cadastrado para enviarmos as instruções para a sua nova senha.</h5>
+      <br/>
+      <div class="form-group">
+        <%= text_field :email, nil, class: "input-block-level", placeholder: "Digite seu Email" %>
+      </div>
+      <button type="submit" class="btn btn-default btn-block">Enviar</button>
+    </fieldset>
+  <% end %>
+</div>

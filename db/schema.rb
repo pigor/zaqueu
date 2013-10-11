@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130911021010) do
+ActiveRecord::Schema.define(version: 20131011193941) do
 
   create_table "collections", force: true do |t|
     t.integer  "user_id"
@@ -32,13 +32,18 @@ ActiveRecord::Schema.define(version: 20130911021010) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "username",         null: false
+    t.string   "username",                        null: false
     t.string   "email"
     t.string   "crypted_password"
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_token_expires_at"
+    t.datetime "reset_password_email_sent_at"
   end
+
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
 
 end
