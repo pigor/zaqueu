@@ -8,6 +8,8 @@ module CollectionsHelper
   end
 
   def repetition_label(repetition)
+    return "Nunca" unless repetition
+
     repetition_options.invert[repetition.to_sym]
   end
 
