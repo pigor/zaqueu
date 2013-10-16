@@ -7,10 +7,13 @@ class Collection < ActiveRecord::Base
     where('deadline > ? and deadline <= ?', (datetime - 10.minutes), datetime)
   }
 
-  def notify
+  def notify(options={})
     Notification.notify(self).deliver
+    
+    updates = { send_count: (self.send_count + 1) }
+    updates[:deadline] = next_deadline unless options[:manual]
 
-    self.update_attributes(send_count: (self.send_count + 1), deadline: next_deadline)
+    self.update_attributes(updates)
   end
 
   def next_deadline

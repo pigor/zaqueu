@@ -17,9 +17,7 @@ class CollectionsController < ApplicationController
   def notify
     collection = Collection.find(params[:collection_id])
 
-    Notification.notify(collection).deliver
-
-    collection.update_attributes(send_count: (collection.send_count + 1))
+    collection.notify(manual: true)
 
     redirect_to root_url, notice: "Cobrança enviada com sucesso!"
   end
