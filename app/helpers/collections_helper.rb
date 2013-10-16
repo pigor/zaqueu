@@ -7,6 +7,10 @@ module CollectionsHelper
     end
   end
 
+  def repetition_label(repetition)
+    repetition_options.invert[repetition.to_sym]
+  end
+
   def repetition_options
     {
       "Nunca" => nil,
