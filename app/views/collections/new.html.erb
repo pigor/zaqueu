@@ -5,20 +5,20 @@
     <div class="control-group">
       <%= f.label :email, :class => 'control-label' %>
       <div class="controls">
-        <%= f.email_field :email, :class => 'text_field' %>
+        <%= f.email_field :email, :class => 'text_field', placeholder: "quem será cobrado?" %>
       </div>
     </div>
     <div class="control-group">
       <%= f.label :description, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_area :description, :rows => 5, :class => 'text_area' %>
+        <%= f.text_area :description, :rows => 5, :class => 'text_area', placeholder: "o que será cobrado?" %>
       </div>
     </div>
     <div class="control-group">
       <%= f.label :deadline, :class => 'control-label' %>
       <div class="controls">
         <div id="deadline-field" class="input-append date">
-          <%= f.text_field :deadline, :"data-format" => "dd/MM/yyyy hh:mm" %>
+          <%= f.text_field :deadline, :"data-format" => "dd/MM/yyyy hh:mm", placeholder: "quando será cobrado?" %>
           <span class="add-on">
             <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
           </span>
