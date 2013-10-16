@@ -6,4 +6,14 @@ module CollectionsHelper
       "deadline-green"
     end
   end
+
+  def repetition_options
+    {
+      "Nunca" => nil,
+      "Todo dia" => :every_day,
+      "Toda semana" => :every_week,
+      "Todo mês" => :every_month,
+      "Todo ano" => :every_year
+    }
+  end
 end

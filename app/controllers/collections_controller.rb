@@ -32,6 +32,6 @@ class CollectionsController < ApplicationController
   private
 
   def collection_params
-    params.require(:collection).permit(:email, :description, :deadline)
+    params.require(:collection).permit(:email, :description, :deadline, :repetition)
   end
 end
