@@ -5,7 +5,7 @@
 
 <p><strong>Descrição:</strong> <%= @collection.description %></p>
 <p><strong>Data de Cobrança:</strong> <%= @collection.deadline.strftime('%d/%m/%Y') %></p>
-<% if @collection.send_count > 1 %>
+<% if @collection.send_count > 1 and @collection.repetition.nil? %>
   <p>Eu cobrei você <strong><%= @collection.send_count %> vezes</strong> antes dessa!</p>
   <p><%= @collection.user.name %> continua aguardando o seu retorno! ;)</p>
 <% else %>
