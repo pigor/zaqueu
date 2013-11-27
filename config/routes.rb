@@ -13,6 +13,10 @@ Zaqueu::Application.routes.draw do
     end
   end
 
+  resources :collections, only: :none do
+    get :close_notify
+  end
+
   resources :sessions
   resources :password_resets
 

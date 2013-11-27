@@ -22,6 +22,14 @@ class CollectionsController < ApplicationController
     redirect_to root_url, notice: "Cobrança enviada com sucesso!"
   end
 
+  def close_notify
+    collection = Collection.find(params[:collection_id])
+
+    Notification.close_notify(collection).deliver
+
+    redirect_to login_url, notice: "Aviso enviado com sucesso, aguarde o retorno!"
+  end
+
   def destroy
     @collection = Collection.find(params[:id])
     @collection.delete
