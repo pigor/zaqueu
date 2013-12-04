@@ -3,13 +3,15 @@ class Collection < ActiveRecord::Base
 
   validates :description, :deadline, :email, presence: true
 
+  validate :deadline_cannot_before_today
+
   scope :by_deadline, ->(datetime) {
     where('deadline > ? and deadline <= ?', (datetime - 10.minutes), datetime)
   }
 
   def notify(options={})
     Notification.notify(self).deliver
-    
+
     updates = { send_count: (self.send_count + 1) }
     updates[:deadline] = next_deadline unless options[:manual]
 
@@ -20,6 +22,12 @@ class Collection < ActiveRecord::Base
     return deadline unless repetition
 
     deadline + self.send(repetition.to_sym)
+  end
+
+  def deadline_cannot_before_today
+    if deadline < Time.zone.now
+      errors.add :deadline, "A data e horário de cobrança devem ser após a data ou horário atual."
+    end
   end
 
   private

@@ -9,7 +9,7 @@ class CollectionsController < ApplicationController
     if @collection.save
       redirect_to root_url, notice: "Cobrança cadastrada com sucesso"
     else
-      flash[:alert] = "Erro ao cadastrar essa cobrança, verifique se todos os campos estão preenchidos" 
+      flash[:alert] = "Erro ao cadastrar essa cobrança, verifique se todos os campos estão preenchidos ou se a data e horário são futuras."
       render :new
     end
   end
