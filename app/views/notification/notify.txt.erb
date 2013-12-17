@@ -1,16 +1,16 @@
 Olá,
 
-Eu sou o Zaqueu e vim cobrar você em nome do(a) <%= @collection.user.name %> (@collection.user.email).
-As informações dessa cobrança são:
-Descrição: <%= @collection.description %>
+Eu sou o Zaqueu e vim em nome de <%= @collection.user.name %> (@collection.user.email), repassar a seguinte mensagem:
 
-Data de Cobrança: <%= @collection.deadline.strftime('%d/%m/%Y') %>
+“<%= @collection.description %>”
+
+Data do lembrete: <%= @collection.deadline.strftime('%d/%m/%Y') %>
 
 Se você já está quite, clique no link abaixo para avisá-lo de encerrar a cobrança.
 Link: <%= link_to collection_close_notify_url(@collection), collection_close_notify_url(@collection) %>
 
 <% if @collection.send_count > 1 and @collection.repetition.nil? %>
-  Eu cobrei você <%= @collection.send_count %> vezes antes dessa!
+  Eu já enviei esse lembrete <%= @collection.send_count %> vezes antes dessa!
   <%= @collection.user.name %> continua aguardando o seu retorno! ;)
 <% else %>
   <%= @collection.user.name %> aguarda o seu retorno! ;)

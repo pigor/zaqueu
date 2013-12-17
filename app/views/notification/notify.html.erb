@@ -1,22 +1,22 @@
 <p>Olá,</p>
 
-<p>Eu sou o Zaqueu e vim cobrar você em nome de <%= @collection.user.name %> (<%=@collection.user.email%>).</p>
-<p>As informações dessa cobrança são:</p>
-
-<p><strong>Descrição:</strong> <%= @collection.description %></p>
-<p><strong>Data de Cobrança:</strong> <%= @collection.deadline.strftime('%d/%m/%Y') %></p>
-<p>Se você já está quite, clique no link abaixo para avisá-lo de encerrar a cobrança.</p>
-<p>Link: <%= link_to collection_close_notify_url(@collection), collection_close_notify_url(@collection) %></p>
+<p>Eu sou o Zaqueu e vim em nome de <%= @collection.user.name %> (<%=@collection.user.email%>), repassar a seguinte mensagem:</p>
 <br/>
+
+<p><i>“<%= @collection.description %>”</i></p>
+<p><strong>Data do lembrete:</strong> <%= @collection.deadline.strftime('%d/%m/%Y') %></p>
+<br/>
+
 <% if @collection.send_count > 1 and @collection.repetition.nil? %>
-  <p>Eu cobrei você <strong><%= @collection.send_count %> vezes</strong> antes dessa!</p>
+  <p>Eu já enviei esse lembrete <strong><%= @collection.send_count %> vezes</strong> antes dessa!</p>
   <p><%= @collection.user.name %> continua aguardando o seu retorno! ;)</p>
 <% else %>
   <p><%= @collection.user.name %> aguarda o seu retorno! ;)</p>
 <% end %>
-<br/>
+
+<p>Se você já está quite, clique no link para avisá-lo de encerrar essa mensagem: <%= link_to "Já estou quite!", collection_close_notify_url(@collection) %></p>
+
 <p>Obrigado,</p>
 
-<br/>
 <p>Zaqueu.</p>
 <p><a href="http://zaqueu.com.br">http://zaqueu.com.br</a></p>
