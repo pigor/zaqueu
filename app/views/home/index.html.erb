@@ -13,19 +13,23 @@
       </div>
     </div>
   </div>
+  <div class="profile-container">
+    <p><strong>Apresente o <%= link_to "Zaqueu", "http://idopter.com/users/paulo-igor/ideas/186-cobrador-online-zaqueu", target: "_blank" %> para seus amigos:</strong></p>
+    <%= render partial: "shared/addthis" %>
+  </div>
   <br/>
 
   <div class="btn-group">
-    <%= link_to "Nova Cobrança", new_user_collection_path(current_user), class: "btn" %>
+    <%= link_to "Novo Lembrete", new_user_collection_path(current_user), class: "btn" %>
   </div>
 
   <hr/>
-  <h3>Próximas Cobranças (<%= current_user.collections.count %>)</h3>
+  <h3>Próximos Lembretes (<%= current_user.collections.count %>)</h3>
   <% if current_user.collections.any? %>
     <table class="table table-hover">
-      <th>Email de Cobrança</th>
+      <th>Email</th>
       <th>Descrição</th>
-      <th>Próxima Cobrança</th>
+      <th>Próxima Envio</th>
       <th>Repetir</th>
       <th><center>Nº de Envios</center></th>
       <th></th>

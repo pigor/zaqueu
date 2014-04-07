@@ -1,13 +1,17 @@
 <div class="container">
   <div class="home-steps">
     <div class="row-fluid">
-      <div class="span4"></div>
+      <div class="span4">
+      </div>
       <div class="span4">
         Olá meu nome é <%= link_to "Zaqueu", "http://idopter.com/users/paulo-igor/ideas/186-cobrador-online-zaqueu" %>
-        e estou aqui para ajudá-lo a cobrar as pessoas, mesmo que seja você mesmo.
-        Você só precisa entrar e me dizer quais são as suas cobranças, é simples e rápido.
+        e estou aqui para ajudá-lo a lembrar as pessoas, mesmo que seja você mesmo.
+        Você só precisa entrar e me dizer quais são os seus lembretes, é simples e rápido.
       </div>
-      <div class="span4"></div>
+      <div class="span4">
+        <p><strong>Me apresente para seus amigos:</strong></p>
+        <%= render partial: "shared/addthis" %>
+      </div>
     </div>
   </div>
   <%= form_tag sessions_path, class: "form-signin" do %>

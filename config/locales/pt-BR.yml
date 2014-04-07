@@ -2,7 +2,7 @@
   activerecord:
     models:
       user: "Usuário"
-      collection: "Cobrança"
+      collection: "Lembrete"
     attributes:
       user:
         name: "Nome"
@@ -12,5 +12,5 @@
       collection:
         email: "Email"
         description: "Descrição"
-        deadline: "Data da Cobrança"
+        deadline: "Data do Lembrete"
         repetition: "Repetir"

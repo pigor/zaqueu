@@ -8,6 +8,6 @@
   </td>
   <td><%= repetition_label(collection.repetition) %></td>
   <td><center><%= collection.send_count %></center></td>
-  <td><%= link_to "cobrar agora", user_collection_notify_path(current_user, collection) %></td>
+  <td><%= link_to "enviar agora", user_collection_notify_path(current_user, collection) %></td>
   <td><%= link_to "encerrar", user_collection_path(current_user, collection), method: :delete %></td>
 </tr>
