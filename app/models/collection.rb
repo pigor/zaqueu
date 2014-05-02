@@ -25,7 +25,7 @@ class Collection < ActiveRecord::Base
   end
 
   def deadline_cannot_before_today
-    if deadline < Time.zone.now
+    if deadline and deadline < Time.zone.now
       errors.add :deadline, " de cobrança devem ser após a data ou horário atual."
     end
   end
