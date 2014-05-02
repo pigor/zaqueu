@@ -1,15 +1,15 @@
 development: &default
   adapter: postgresql
   database: zaqueu_development
-  #username: postgres
+  username: postgres
+  password: root
   encoding: utf8
-  #password:
   host: localhost
 
 test:
   <<: *default
   database: zaqueu_test
 
-production:
-  <<: *default
-  database: zaqueu_production
+# production:
+#   <<: *default
+#   database: zaqueu_production

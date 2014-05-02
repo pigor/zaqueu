@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      collection: "Lembrete"
+
+    attributes:
+      collection:
+        description: "Nome"
+
+        email: "E-mail"
+        deadline: "Data e horário"
