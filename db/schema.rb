@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131016030905) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "collections", force: true do |t|
     t.integer  "user_id"
     t.text     "description"
@@ -22,14 +25,6 @@ ActiveRecord::Schema.define(version: 20131016030905) do
     t.string   "email"
     t.integer  "send_count",  default: 0
     t.string   "repetition"
-  end
-
-  create_table "user_collections", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "collection_id"
-    t.boolean  "collector"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

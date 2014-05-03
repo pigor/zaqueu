@@ -1,41 +1,5 @@
 <div class="container">
   <h3>Novo Lembrete</h3>
+  <%= render "form", record: @collection, path: user_collections_path %>
   <br/>
-  <%= form_for @collection, url: user_collections_path, :html => { :class => 'form-horizontal' } do |f| %>
-    <div class="control-group">
-      <%= f.label :email, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.email_field :email, :class => 'text_field', placeholder: "quem será lembrado?" %>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :description, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_area :description, :rows => 5, :class => 'text_area', placeholder: "o que será lembrado?" %>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :deadline, :class => 'control-label' %>
-      <div class="controls">
-        <div id="deadline-field" class="input-append date">
-          <%= f.text_field :deadline, :"data-format" => "dd/MM/yyyy hh:mm", placeholder: "quando será lembrado?" %>
-          <span class="add-on">
-            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :repetition, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.select :repetition, repetition_options, :class => 'select' %>
-      </div>
-    </div>
-
-    <div class="form-actions">
-      <%= f.submit "Salvar", :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => "Cancelar"),
-                  root_path, :class => 'btn' %>
-    </div>
-  <% end %>
 </div>

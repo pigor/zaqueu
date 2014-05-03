@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'sorcery'
 
+gem "rails-i18n"
+
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 gem 'bootstrap-datetimepicker-rails'
