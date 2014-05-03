@@ -30,6 +30,11 @@ class Collection < ActiveRecord::Base
     end
   end
 
+  def deadline_format_timestamp
+    self.deadline = self.deadline.strftime("%d/%m/%Y %H:%M")
+    self
+  end
+
   private
 
   def every_day

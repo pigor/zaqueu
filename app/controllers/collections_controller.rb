@@ -15,6 +15,21 @@ class CollectionsController < ApplicationController
 
   def edit
     @collection = Collection.find(params[:id])
+    @collection.deadline_format_timestamp
+  end
+
+  def update
+    @collection = Collection.find(params[:id])
+
+    if @collection.update_attributes(params.require(:collection).permit(:description, :repetition, :deadline, :email))
+      redirect_to root_url, notice: "Cobrança alterada"
+    else
+      render :edit
+    end
+  end
+
+  def show
+    @collection = Collection.last
   end
 
   def notify
@@ -45,4 +60,5 @@ class CollectionsController < ApplicationController
   def collection_params
     params.require(:collection).permit(:email, :description, :deadline, :repetition)
   end
+
 end
