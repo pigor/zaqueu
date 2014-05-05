@@ -15,21 +15,16 @@ class CollectionsController < ApplicationController
 
   def edit
     @collection = Collection.find(params[:id])
-    @collection.deadline_format_timestamp
   end
 
   def update
     @collection = Collection.find(params[:id])
 
-    if @collection.update_attributes(params.require(:collection).permit(:description, :repetition, :deadline, :email))
-      redirect_to root_url, notice: "Cobrança alterada"
+    if @collection.update_attributes(collection_params)
+      redirect_to root_url, notice: "Cobrança alterada com sucesso!"
     else
       render :edit
     end
-  end
-
-  def show
-    @collection = Collection.last
   end
 
   def notify
