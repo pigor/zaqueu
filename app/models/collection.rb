@@ -30,9 +30,8 @@ class Collection < ActiveRecord::Base
     end
   end
 
-  def deadline_format_timestamp
-    self.deadline = self.deadline.strftime("%d/%m/%Y %H:%M")
-    self
+  def deadline_formatted
+    deadline.strftime("%d/%m/%Y %H:%M") if deadline
   end
 
   private
