@@ -5,7 +5,7 @@
     <div class="control-group">
       <%= f.label :email, :class => 'control-label' %>
       <div class="controls">
-        <%= f.email_field :email, :class => 'text_field', placeholder: "quem será lembrado?" %>
+        <%= f.email_field :email, :class => 'text_field', placeholder: "quem será lembrado?", disabled: !@collection.new_record? %>
       </div>
     </div>
     <div class="control-group">
@@ -18,7 +18,7 @@
       <%= f.label :deadline, :class => 'control-label' %>
       <div class="controls">
         <div id="deadline-field" class="input-append date">
-          <%= f.text_field :deadline, :"date-mask" =>"dd/MM/yyyy hh:mm",
+          <%= f.text_field :deadline, value: @collection.deadline_formatted, :"date-mask" =>"dd/MM/yyyy hh:mm",
                :"data-format" => "dd/MM/yyyy  hh:mm", placeholder: "quando será lembrado?" %>
           <span class="add-on">
             <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
@@ -35,7 +35,6 @@
 
     <div class="form-actions">
       <%= f.submit "Salvar", :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => "Cancelar"),
-                  root_path, :class => 'btn' %>
+      <%= link_to t('.cancel', :default => "Cancelar"), root_path, :class => 'btn' %>
     </div>
   <% end %>
