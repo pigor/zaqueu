@@ -45,6 +45,8 @@ gem 'rails_12factor'
 
 gem 'newrelic_rpm'
 
+gem 'rest-client'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

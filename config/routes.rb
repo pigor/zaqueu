@@ -11,6 +11,9 @@ Zaqueu::Application.routes.draw do
     resources :collections do
       get :notify
     end
+
+    get :edit_yo
+    patch :update_yo
   end
 
   resources :collections, only: :none do
@@ -19,6 +22,10 @@ Zaqueu::Application.routes.draw do
 
   resources :sessions
   resources :password_resets
+
+  resource :yos, only: :none do
+    get :yo
+  end
 
   root :to => "home#index"
 end

@@ -12,6 +12,8 @@ class Collection < ActiveRecord::Base
   def notify(options={})
     Notification.notify(self).deliver
 
+    Yo.yo user.yo_username if send_yo?
+
     updates = { send_count: (self.send_count + 1) }
     updates[:deadline] = next_deadline unless options[:manual]
 
@@ -32,6 +34,10 @@ class Collection < ActiveRecord::Base
 
   def deadline_formatted
     deadline.strftime("%d/%m/%Y %H:%M") if deadline
+  end
+
+  def send_yo?
+    user.yo_username and user.email == email
   end
 
   private

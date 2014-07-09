@@ -29,9 +29,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit_yo
+    @user = User.find params[:user_id]
+  end
+
+  def update_yo
+    @user = User.find params[:user_id]
+
+    if @user.update_attribute :yo_username, params[:user][:yo_username]
+      redirect_to root_url, notice: "Yo alterado com sucesso!"
+    else
+      flash[:error] = "Ocorreu um erro ao alterar sua senha!"
+      render :edit
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :email, :password)
+    params.require(:user).permit(:name, :username, :yo_username, :email, :password)
   end
 end

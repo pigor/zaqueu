@@ -6,7 +6,9 @@
         <div class="media">
           <h4><%= current_user.name %></h4>
           <h5><%= current_user.email %></h5>
-          <%= link_to "alterar senha", edit_user_path(current_user) %>
+          <%= link_to "alterar perfil", edit_user_path(current_user) %>
+          <br/>
+          <%= link_to "integração Yo", user_edit_yo_path(current_user) %>
           <br/>
           <%= link_to "logout", logout_path %>
         </div>

@@ -1,0 +1,2 @@
+module YoControllerHelper
+end
