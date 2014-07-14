@@ -7,7 +7,7 @@ class CollectionsController < ApplicationController
     @collection = current_user.collections.build(collection_params)
 
     if @collection.save
-      redirect_to root_url, notice: "Cobrança cadastrada com sucesso"
+      redirect_to root_url, notice: "Lembrete cadastrado com sucesso"
     else
       render :new
     end
@@ -21,7 +21,7 @@ class CollectionsController < ApplicationController
     @collection = Collection.find(params[:id])
 
     if @collection.update_attributes(collection_params)
-      redirect_to root_url, notice: "Cobrança alterada com sucesso!"
+      redirect_to root_url, notice: "Lembrete alterado com sucesso!"
     else
       render :edit
     end
@@ -32,7 +32,7 @@ class CollectionsController < ApplicationController
 
     collection.notify(manual: true)
 
-    redirect_to root_url, notice: "Cobrança enviada com sucesso!"
+    redirect_to root_url, notice: "Lembrete enviado com sucesso!"
   end
 
   def close_notify
@@ -47,7 +47,7 @@ class CollectionsController < ApplicationController
     @collection = Collection.find(params[:id])
     @collection.delete
 
-    redirect_to root_path, notice: "Cobrança removida com sucesso!"
+    redirect_to root_path, notice: "Removido removido com sucesso!"
   end
 
   private
