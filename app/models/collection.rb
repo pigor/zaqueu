@@ -12,7 +12,7 @@ class Collection < ActiveRecord::Base
   def notify(options={})
     Notification.notify(self).deliver
 
-    Yo.yo user.yo_username if send_yo?
+    Yo.yo user.yo_username if send_yo? rescue false
 
     updates = { send_count: (self.send_count + 1) }
     updates[:deadline] = next_deadline unless options[:manual]
