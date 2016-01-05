@@ -8,4 +8,13 @@ class User < ActiveRecord::Base
   def collections_ordered
     collections.order(:deadline)
   end
+
+  def api_params
+    {
+      username: username,
+      name: name,
+      email: email,
+      collections: collections_ordered
+    }
+  end
 end
