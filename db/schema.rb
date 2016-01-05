@@ -13,7 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20140709193745) do
 
-  create_table "collections", force: true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "collections", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "description"
     t.datetime "deadline"
@@ -24,15 +27,7 @@ ActiveRecord::Schema.define(version: 20140709193745) do
     t.string   "repetition"
   end
 
-  create_table "user_collections", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "collection_id"
-    t.boolean  "collector"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "username",                        null: false
     t.string   "email"
     t.string   "crypted_password"

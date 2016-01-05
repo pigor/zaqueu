@@ -22,7 +22,7 @@
   <br/>
 
   <div class="btn-group">
-    <%= link_to "Novo Lembrete", new_user_collection_path(current_user), class: "btn" %>
+    <%= link_to "Novo Lembrete", new_user_collection_path(current_user), class: "btn btn-primary" %>
   </div>
 
   <hr/>
@@ -34,8 +34,6 @@
       <th>Próxima Envio</th>
       <th>Repetir</th>
       <th><center>Nº de Envios</center></th>
-      <th></th>
-      <th></th>
       <th></th>
 
       <%= render partial: "collection", collection: current_user.collections_ordered %>

@@ -37,21 +37,21 @@
     <!-- Size should be 32 x 32 pixels -->
     <%#= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
     <%= render 'layouts/analytics' %>
-    
+
   </head>
   <body>
     <div class="container-fluid">
       <div class="container">
         <p class="title-font title-margin">Zaqueu</p>
         <hr/>
-        <div class="row-fluid">
-        <div class="span9">
-          <%= bootstrap_flash %>
+        <div class="row">
+        <div class="col-md-12">
+          <%= flash_messages %>
           <%= yield %>
         </div>
       </div><!--/row-->
       </div>
-      
+
       <%= render 'layouts/footer' %>
 
     </div> <!-- /container -->

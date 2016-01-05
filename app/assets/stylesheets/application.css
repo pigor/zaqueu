@@ -10,8 +10,9 @@
  *
  *= require_self
  *= require_tree .
- *= require bootstrap_and_overrides
- *= require bootstrap-datetimepicker
+ *= require bootstrap
+ *= require bootstrap-datetimepicker.min
+ *= require font-awesome
  */
 
 .title-font {

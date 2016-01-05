@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
-//= require bootstrap-datetimepicker
+//= require bootstrap.min
 //= require turbolinks
+//= require moment
+//= require bootstrap-datetimepicker
+//= require moment/pt-br
 //= require_tree .
