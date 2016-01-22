@@ -35,6 +35,7 @@ class CollectionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to root_url, notice: "Lembrete enviado com sucesso!" }
       format.json { render json: {status: 200, message: "Lembrete enviado com sucesso!"}}
+    end
   end
 
   def close_notify
