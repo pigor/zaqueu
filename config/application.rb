@@ -23,10 +23,5 @@ module Zaqueu
     config.i18n.default_locale = :"pt-BR"
     config.i18n.load_path += Dir["app/locales/**/*.yml"]
     config.i18n.available_locales = ["pt-BR", "en"]
-
-    config.action_dispatch.default_headers = {
-      'Access-Control-Allow-Origin' => 'http://localhost:8100',
-      'Access-Control-Request-Method' => %w{POST}.join(',')
-    }
   end
 end
