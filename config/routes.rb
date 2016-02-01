@@ -20,6 +20,7 @@ Zaqueu::Application.routes.draw do
     get :close_notify
   end
 
+  match 'sessions', to: 'sessions#create', via: [:options]
   resources :sessions
   resources :password_resets
 
