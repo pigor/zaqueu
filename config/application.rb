@@ -25,7 +25,7 @@ module Zaqueu
     config.i18n.available_locales = ["pt-BR", "en"]
 
     config.action_dispatch.default_headers = {
-      'Access-Control-Allow-Origin' => 'http://localhost:8001',
+      'Access-Control-Allow-Origin' => 'http://localhost:8100',
       'Access-Control-Request-Method' => %w{POST}.join(',')
     }
   end
