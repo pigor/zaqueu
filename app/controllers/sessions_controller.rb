@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  before_action :allow_ajax_request_from_other_domains, only: [:create]
+
   def new
   end
 
@@ -28,4 +30,13 @@ class SessionsController < ApplicationController
       format.json { render json: {status: 200, message: "Logged out!"} }
     end
   end
+
+  private
+
+  def allow_ajax_request_from_other_domains
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Request-Method'] = '*'
+    headers['Access-Control-Allow-Headers'] = '*'
+  end
+
 end
